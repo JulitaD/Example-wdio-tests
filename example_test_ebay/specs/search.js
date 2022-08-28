@@ -1,10 +1,10 @@
 const HomePage = require('../pageobjects/home.page');
-const ResultsPage = require('../pageobjects/results.page');
+const SearchPage = require('../pageobjects/search.page');
 
 const searchText = 'laptop';
 const categoryName = 'PC Laptops & Netbooks';
 
-describe('Ebay Product Seach', () => {
+describe('Ebay Product Search', () => {
     it('should open the main url and verify the title', async () => {
         await HomePage.open();
         await expect(browser).toHaveTitle('Electronics, Cars, Fashion, Collectibles & More | eBay');
@@ -20,6 +20,6 @@ describe('Ebay Product Seach', () => {
     });
 
     it('should update the search category', async () => {
-        await expect(ResultsPage.category).toHaveText(categoryName);
+        await expect(SearchPage.category).toHaveText(categoryName);
     });
 }); 
